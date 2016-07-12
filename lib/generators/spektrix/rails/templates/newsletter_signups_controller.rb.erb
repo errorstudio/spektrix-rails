@@ -1,0 +1,7 @@
+class NewsletterSignupsController < ApplicationController
+    # You probably want to define your own layout here. By default it'll use application.
+    # layout "templates/newsletter_signup"
+
+    # include a show() method which understands posts from Spektrix.
+    include Spektrix::Rails::NewsletterSignup
+end

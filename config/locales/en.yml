@@ -1,0 +1,8 @@
+en:
+  spektrix:
+    signup_forms:
+      errors:
+        email_exists: "The email you entered already exists"
+        no_email: "You need to include an email address to sign up"
+        no_last_name: "You need to include your last name to sign up"
+        invalid_email: "The email you entered wasn't valid"

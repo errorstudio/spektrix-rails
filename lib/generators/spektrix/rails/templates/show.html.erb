@@ -1,0 +1,31 @@
+<%% content_for :title, "Sign up to our newsletter" %>
+
+<%% if @came_from_spektrix%>
+    <h2>Your details were saved and you're on the list.</h2>
+<%% else %>
+    <form action="<%%= spektrix_signup_path %>"
+          method="POST">
+        <%% if @errors %>
+            <h2>Your details couldn't be saved</h2>
+            <ul class="newsletter-error-messages">
+                <%% @errors.each do |field,error| %>
+                    <li><%%= error %></li>
+                <%% end %>
+            </ul>
+        <%% end %>
+        <input type="hidden" name="ReturnUrl" value="<%%= request.original_url %>" />
+        <div class="form-group <%%= (@errors.present? && @errors['Email']) ? "field-with-error" : ""%>">
+            <label for="FirstName">First Name</label>
+            <input type="text" id="FirstName" name="FirstName" placeholder="">
+        </div>
+        <div class="form-group <%%= (@errors.present? && @errors['Email']) ? "field-with-error" : ""%>">
+            <label for="LastName">Last Name</label>
+            <input type="text" id="LastName" name="LastName" placeholder="">
+        </div>
+        <div class="form-group <%%= (@errors.present? && @errors['Email']) ? "field-with-error" : ""%>">
+            <label for="Email">Email</label>
+            <input type="text" id="Email" name="Email" placeholder="" >
+        </div>
+        <button type="submit" class="btn btn-default">Sign up</button>
+    </form>
+<%% end %>
