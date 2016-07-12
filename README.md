@@ -37,7 +37,7 @@ You will probably want to specify a template to render your form and any message
  end
  ```
  
- ### Newsletter Signup endpoint helper
+### Newsletter Signup endpoint helper
 You might want to have an omnipresent newsletter signup form. To make it easier to make one, there's a helper method called `spektrix_signup_path` you can use in your views to generate the path to POST to. 
  
  
