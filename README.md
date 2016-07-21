@@ -40,4 +40,27 @@ You will probably want to specify a template to render your form and any message
 ### Newsletter Signup endpoint helper
 You might want to have an omnipresent newsletter signup form. To make it easier to make one, there's a helper method called `spektrix_signup_path` you can use in your views to generate the path to POST to. 
  
- 
+## Spektrix Iframes
+
+### Helper methods for URLs
+There are some standard things you'll want to put into iframes:
+
+* account page
+* basket page
+* checkout page
+* instance booking process
+
+There are some helpers to help with that:
+
+* `account_iframe_url`
+* `basket_iframe_url`
+* `checkout_iframe_url`
+* `instance_booking_iframe_url` (requires an instance ID)
+
+### Iframe partial
+There's a standard Spektrix iframe, so it's in a partial in this gem:
+
+```
+#in your view
+<%= render partial: 'spektrix/rails/iframe', locals: {url: "https://something"} %>
+```
