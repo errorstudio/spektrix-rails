@@ -1,0 +1,4 @@
+<% if url %>
+    <script type='text/javascript' src='https://system.spektrix.com/<%= Rails.configuration.x.spektrix.client_name %>/website/scripts/resizeiframe.js'></script>
+    <div class="iframe-holder"><iframe name="SpektrixIFrame" id="SpektrixIFrame" frameborder="0" src="<%= url %>" style="width: 100%; height: 1000px;" onload= "scroll(0,0);"></iframe></div>
+<% end %>

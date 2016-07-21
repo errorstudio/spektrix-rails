@@ -11,6 +11,7 @@ module Spektrix
       initializer "add_helpers" do
         ActiveSupport.on_load(:action_view) do
           include Spektrix::Rails::NewsletterHelper
+          include Spektrix::Rails::IframeHelper
         end
       end
 
