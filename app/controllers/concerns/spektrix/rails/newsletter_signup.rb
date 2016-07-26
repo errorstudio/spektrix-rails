@@ -16,6 +16,7 @@ module Spektrix
                   end
 
         @came_from_spektrix = request.referer.try(:match,"spektrix") && !@errors.present?
+        yield if block_given?
       end
 
     end
