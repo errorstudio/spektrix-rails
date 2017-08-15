@@ -1,7 +1,7 @@
 <%% content_for :title, "Sign up to our newsletter" %>
 
 <%% if @came_from_spektrix%>
-    <h2>Your details were saved and you're on the list.</h2>
+    <h2>Your details were saved. Please check your email for a confirmation link.</h2>
 <%% else %>
     <form action="<%%= spektrix_signup_path %>"
           method="POST">
@@ -13,7 +13,7 @@
                 <%% end %>
             </ul>
         <%% end %>
-        <input type="hidden" name="ReturnUrl" value="<%%= request.original_url %>" />
+        <input type="hidden" name="ReturnUrl" value="<%%= newsletter_signup_url(came_from_spektrix: true) %>" />
         <div class="form-group <%%= (@errors.present? && @errors['Email']) ? "field-with-error" : ""%>">
             <label for="FirstName">First Name</label>
             <input type="text" id="FirstName" name="FirstName" placeholder="">

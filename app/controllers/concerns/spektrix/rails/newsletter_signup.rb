@@ -15,7 +15,7 @@ module Spektrix
                       { 'Email' => "The email you've supplied doesn't look quite right."}
                   end
 
-        @came_from_spektrix = request.referer.try(:match,"spektrix") && !@errors.present?
+        @came_from_spektrix = (params[:came_from_spektrix].present?) && !@errors.present?
         yield if block_given?
       end
 
